@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Tanishka 💗</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #854263;
+  background: linear-gradient(135deg, #ffe0ed, #eedbff, #fff0dc);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 650px;
+  margin: auto;
+  padding: 35px 18px;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  color: #d94f91;
+  font-size: clamp(36px, 8vw, 55px);
+}
+
+.cake {
+  font-size: 100px;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  50% { transform: translateY(-12px); }
+}
+
+.card {
+  background: #ffffffc9;
+  padding: 25px 18px;
+  border: 2px solid white;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px #d777a533;
+}
+
+h2 { color: #d94f91; }
+
+p { line-height: 1.8; }
+
+button {
+  padding: 14px 22px;
+  margin: 12px 5px;
+  border: none;
+  border-radius: 30px;
+  background: #df5b9d;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover { background: #bf3c7d; }
+
+#surprise {
+  display: none;
+  animation: appear 1s ease;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.heart {
+  position: fixed;
+  bottom: -40px;
+  pointer-events: none;
+  animation: floatUp 5s linear forwards;
+  z-index: 0;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+footer { margin-top: 25px; }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <p>🎀 A SPECIAL SURPRISE FOR YOU 🎀</p>
+
+  <h1>Happy Birthday<br>Tanishka! 💗</h1>
+
+  <p>To my sweetest best friend 🌸</p>
+
+  <div class="cake">🎂</div>
+
+  <div class="card">
+    <h2>Dear Tanishka 💌</h2>
+
+    <p>
+      Today is your special day! 💕<br>
+      You deserve all the happiness in the world.<br>
+      Keep smiling, keep shining,<br>
+      and keep being the wonderful person you are! 🌷
+    </p>
+
+    <button onclick="openSurprise()">
+      🎁 Open Your Surprise
+    </button>
+
+    <div id="surprise">
+      <h2>Surprise! 🥳💖</h2>
+
+      <div style="font-size:50px">🎁🎂💐</div>
+
+      <p>
+        Happy Birthday, Bestie! 🫶<br>
+        Thank you for being such a special friend.<br>
+        May your dreams come true,<br>
+        your heart stay happy,<br>
+        and your life be full of beautiful memories. ✨
+      </p>
+
+      <h2>Forever Best Friends! 💞</h2>
+      <p>Sending you lots of love and hugs! 🌈</p>
+    </div>
+  </div>
+
+  <button onclick="celebrate()">🎉 Celebrate!</button>
+
+  <footer>Made with 💗 for Tanishka</footer>
+
+</div>
+
+<script>
+function openSurprise() {
+  document.getElementById("surprise").style.display = "block";
+  celebrate();
+}
+
+function celebrate() {
+  const emojis = ["💗", "💕", "✨", "🎉", "🌸", "🎊"];
+
+  for (let i = 0; i < 30; i++) {
+    const item = document.createElement("span");
+    item.className = "heart";
+    item.textContent =
+      emojis[Math.floor(Math.random() * emojis.length)];
+
+    item.style.left = Math.random() * 100 + "vw";
+    item.style.fontSize = (20 + Math.random() * 20) + "px";
+    item.style.animationDuration = (3 + Math.random() * 3) + "s";
+
+    document.body.appendChild(item);
+
+    setTimeout(() => item.remove(), 6500);
+  }
+}
+</script>
+
+</body>
+</html>
